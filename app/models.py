@@ -65,6 +65,7 @@ class User(UserMixin, db.Model):
     last_seen = db.Column(db.DateTime(), default=datetime.utcnow)
     avatar_hash = db.Column(db.String(32))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
+    updates = db.relationship('Update', backref='author', lazy='dynamic')
 
     @staticmethod
     def generate_fake(count=100):
@@ -238,3 +239,20 @@ class Post(db.Model):
             tags=allowed_tags, strip=True))
 
 db.event.listen(Post.body, 'set', Post.on_changed_body)
+
+class Initiative(db.Model):
+    __tablename__ = 'initiatives'
+    id = db.Column(db.Integer, primary_key=True)
+    body = db.Column(db.Text)
+    body_html = db.Column(db.Text)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    updates = db.Relationship('Update', backref='initiative', lazy='dynamic')
+    
+class Update(db.Model):
+    __tablename__ = 'updates'
+    id = db.Column(db.Integer, primary_key=True)
+    body = db.Column(db.Text)
+    body_html = db.Column(db.Text)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    initiative_id = db.Column(db.Integer, db.ForeignKey('initiatives.id'))
