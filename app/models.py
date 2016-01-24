@@ -243,6 +243,7 @@ db.event.listen(Post.body, 'set', Post.on_changed_body)
 class Initiative(db.Model):
     __tablename__ = 'initiatives'
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(20), unique=True, index=True)
     body = db.Column(db.Text)
     body_html = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
