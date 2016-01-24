@@ -246,7 +246,7 @@ class Initiative(db.Model):
     body = db.Column(db.Text)
     body_html = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    updates = db.Relationship('Update', backref='initiative', lazy='dynamic')
+    updates = db.relationship('Update', backref='initiative', lazy='dynamic')
     
 class Update(db.Model):
     __tablename__ = 'updates'
@@ -256,3 +256,4 @@ class Update(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     initiative_id = db.Column(db.Integer, db.ForeignKey('initiatives.id'))
+    
