@@ -213,7 +213,8 @@ class Post(db.Model):
     body_html = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-
+    category = db.Column(db.String(24))
+    
     @staticmethod
     def generate_fake(count=100):
         from random import seed, randint
