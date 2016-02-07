@@ -5,6 +5,9 @@ from wtforms.validators import Required, Length, Email, Regexp
 from wtforms import ValidationError
 from flask.ext.pagedown.fields import PageDownField
 from ..models import Role, User
+from flask.ext import admin
+from wtforms.widgets import TextArea
+from flask.ext.admin.contrib.sqla import ModelView
 
 class NameForm(Form):
     name = StringField('What is your name?', validators=[Required()])
@@ -54,3 +57,14 @@ class PostForm(Form):
     category = StringField("Category", validators=[Required()])
     submit = SubmitField('Submit')
 
+class CKTextAreaWidget(TextArea):
+    def __call__(self, field, **kwargs):
+        kwargs.setdefault('class_', 'ckeditor')
+        return super(CKTextAreaWidget, self).__call__(field, **kwargs)
+        
+class CKTextAreaField(TextAreaField):
+    widget = CKTextAreaWidget()
+    
+class TestAdmin(ModelView):
+    form_overrides = dict(text=CKTextAreaField)
+    

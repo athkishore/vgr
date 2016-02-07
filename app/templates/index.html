@@ -21,7 +21,17 @@
 </div>
 {% endif %}
 {% endif %}
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type=text/javascript src="http://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+<script type=text/javascript src="http://cdn.ckeditor.com/4.5.7/standard/adapters/jquery.js"></script>
 
+$(document).ready(function(){
+	$("textarea[name='editor']").ckeditor(function(){},{height:700});
+});
+
+<textarea name='editor'></textarea>
+<input type='hidden' name='detail' id='detail' value=''>
 {% endblock %}
 
 {% block scripts %}
