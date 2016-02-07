@@ -106,3 +106,14 @@ def edit(id):
     form.body.data = post.body
     form.category.data = post.category
     return render_template('edit_post.html', form=form)
+
+@main.route('/work/<area>')
+@login_required
+def initiative(area):
+    page = request.args.get('page', 1, type=int)
+    pagination = Post.query.filter_by(category=area).order_by(Post.timestamp.desc()).paginate(
+        page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
+        error_out=False)
+    posts = pagination.items
+    return render_template('initiative.html', user=current_user, posts=posts,
+                           pagination=pagination, area=area)
