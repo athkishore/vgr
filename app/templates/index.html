@@ -5,12 +5,32 @@
 {% block title %}SAF Vellangallur{% endblock %}
 
 {% block page_content %}
+<script src={{ url_for('static', filename='ckeditor/ckeditor.js') }}></script>
+
 <div class="page-header">
     <h1>Hello, {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Please login to access content{% endif %}!</h1>
 </div>
 <div>
     {% if current_user.can(Permission.WRITE_ARTICLES) %}
-    {{ wtf.quick_form(form) }}
+    <form method='post' class='form' role='form'>
+        {{ form.hidden_tag() }}
+        <div class="form-group"><label class="control-label" for="body">Post
+        your update</label>
+        
+	<textarea class="form-control" id="body" name="body"></textarea>
+        <script>
+            CKEDITOR.replace('body');
+        </script>
+        </div>
+        <div class="form-group"><label class="control-label"
+        for="category">Category</label>
+          <input class="form-control" id="category" name="category"
+          type="text" value="">
+        </div>
+        
+        <input class="btn btn-default" id="submit" name="submit"
+        value="Submit">
+    </form>
     {% endif %}
 </div>
 {% if current_user.is_authenticated %}
@@ -21,14 +41,6 @@
 </div>
 {% endif %}
 {% endif %}
-<script src={{ url_for('static', filename='ckeditor/ckeditor.js') }}></script>
-<form>
-  <textarea name="editor1" id="editor1" rows=10 cols="50">
-    This is my textarea to be replaced with CKEditor.
-  </textarea>
-  <script>
-    CKEDITOR.replace('editor1');
-  </script>
 {% endblock %}
 
 {% block scripts %}

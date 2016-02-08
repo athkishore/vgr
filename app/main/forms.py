@@ -50,7 +50,8 @@ class EditProfileAdminForm(Form):
 
 
 class PostForm(Form):
-    body = PageDownField("Post your update", validators=[Required()])
+    #body = PageDownField("Post your update", validators=[Required()])
+    body = TextAreaField("Post your update", validators=[Required()])
     category = StringField("Category", validators=[Required()])
     submit = SubmitField('Submit')
 
