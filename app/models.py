@@ -2,7 +2,7 @@ from datetime import datetime
 import hashlib
 from werkzeug.security import generate_password_hash, check_password_hash
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
-from markdown import markdown
+#from markdown import markdown
 import bleach
 from flask import current_app, request
 from flask.ext.login import UserMixin, AnonymousUserMixin
@@ -236,8 +236,7 @@ class Post(db.Model):
                         'em', 'i', 'li', 'ol', 'pre', 'strong', 'ul',
                         'h1', 'h2', 'h3', 'p']
         target.body_html = bleach.linkify(bleach.clean(
-            markdown(value, output_format='html'),
-            tags=allowed_tags, strip=True))
+            value, tags=allowed_tags, strip=True))
 
 db.event.listen(Post.body, 'set', Post.on_changed_body)
 
