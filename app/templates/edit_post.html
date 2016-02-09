@@ -8,7 +8,43 @@
     <h1>Edit Post</h1>
 </div>
 <div>
-    {{ wtf.quick_form(form) }}
+    <form method="post" class="form" role="form">
+        {{ form.hidden_tag() }}
+<!--
+	{{ form.body }}
+	{{ form.category }}
+	{{ form.submit }}
+-->
+	<div class="form-group">
+	<label class="control-label" for="body">Post your update</label>
+	<textarea class="form-control" id="body" name="body"></textarea>
+	</div>
+	<div class="form-group"><label class="control-label" for="category">Category</label>
+	<input class="form-control" id="category" name="category" type="text" value="">
+	</div>
+	<script>
+	    CKEDITOR.replace('body');
+	</script>
+	<input id="submit" name="submit" type="submit" value="Submit">
+<!--
+        <div class="form-group"><label class="control-label" for="body">Post
+        your update</label>
+	<textarea class="form-control" id="body" name="body"></textarea>
+        <script>
+            CKEDITOR.replace('body');
+        </script>
+        </div>
+        <div class="form-group"><label class="control-label"
+        for="category">Category</label>
+          <input class="form-control" id="category" name="category"
+          type="text" value="">
+        </div>
+        
+        <input class="btn btn-default" id="submit" name="submit"
+        value="Submit">
+-->
+    </form>
+
 </div>
 {% endblock %}
 
