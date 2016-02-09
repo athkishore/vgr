@@ -7,7 +7,7 @@
             </a>
         </div>
         <div class="post-content">
-            <div class="post-date">{{ moment(post.timestamp).fromnow() }}</div>
+            <div class="post-date">{{ moment(post.timestamp).format('MMMM Do YYYY, h:mm a') }}</div>
             <div class="post-author"><a href="{{ url_for('.user', username=post.author.username) }}">{{ post.author.username }}</a></div>
 	    <div class="post-category"><p>{{ post.category }}</p></div>
             <div class="post-body">
