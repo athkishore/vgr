@@ -4,6 +4,8 @@
 {% block title %}SAF Vellangallur - Edit Post{% endblock %}
 
 {% block page_content %}
+<script src={{ url_for('static', filename='ckeditor/ckeditor.js') }}></script>
+
 <div class="page-header">
     <h1>Edit Post</h1>
 </div>
@@ -17,15 +19,20 @@
 -->
 	<div class="form-group">
 	<label class="control-label" for="body">Post your update</label>
-	<textarea class="form-control" id="body" name="body"></textarea>
+	<textarea class="form-control" id="body" name="body">{{
+	form.body.data }}</textarea>
+	<script>
+	    CKEditor.replace('body');
+	</script>
 	</div>
 	<div class="form-group"><label class="control-label" for="category">Category</label>
-	<input class="form-control" id="category" name="category" type="text" value="">
+	<input class="form-control" id="category" name="category" type="text"
+	value="{{ form.category.data }}">
 	</div>
 	<script>
 	    CKEDITOR.replace('body');
 	</script>
-	<input id="submit" name="submit" type="submit" value="Submit">
+	<input class="btn btn-default" id="submit" name="submit" type="submit" value="Submit">
 <!--
         <div class="form-group"><label class="control-label" for="body">Post
         your update</label>
