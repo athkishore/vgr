@@ -4,18 +4,21 @@ from flask.ext.login import login_required, current_user
 from . import main
 from .forms import EditProfileForm, EditProfileAdminForm, PostForm
 from .. import db
-from ..models import Permission, Role, User, Post
+from ..models import Permission, Role, User, Post, Initiative
 from ..decorators import admin_required
 
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
     form = PostForm()
+    form.category.choices = [(i.id, i.name) for i in Initiative.query.order_by('name')]
+    if request.method == 'POST':
+        print form.validate_on_submit()
     if current_user.can(Permission.WRITE_ARTICLES) and \
             form.validate_on_submit():
         post = Post(body=form.body.data,
                     author=current_user._get_current_object(),
-                    category=form.category.data)
+                    category=Initiative.query.filter_by(id=form.category.data).first().name, category_id=form.category.data)
         db.session.add(post)
         return redirect(url_for('.index'))
     page = request.args.get('page', 1, type=int)
@@ -97,15 +100,30 @@ def edit(id):
             not current_user.can(Permission.ADMINISTER):
         abort(403)
     form = PostForm()
+    form.category.choices = [(i.id, i.name) for i in Initiative.query.order_by('name')]
     if form.validate_on_submit():
         post.body = form.body.data
-        post.category = form.category.data
+        post.category_id = form.category.data
+        post.category = Initiative.query.get(form.category.data).name
         db.session.add(post)
         flash('The post has been updated.')
         return redirect(url_for('.post', id=post.id))
     form.body.data = post.body
-    form.category.data = post.category
+    form.category.data = post.category_id
+    print post.category
     return render_template('edit_post.html', form=form)
+
+@login_required
+@main.route('/delete/<int:id>')
+def delete(id):
+    post = Post.query.get_or_404(id)
+    if current_user != post.author and \
+            not current_user.can(Permission.ADMINISTER):
+        abort(403)
+    db.session.delete(post)
+    flash('The post has been deleted.')
+    return redirect(url_for('.index'))
+    
 
 @main.route('/work/<area>')
 @login_required
