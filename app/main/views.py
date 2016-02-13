@@ -12,18 +12,17 @@ from os.path import isfile, join
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
-    photofiles = [f for f in listdir('app/static/galleria/img') if isfile(join('app/static/galleria/img',f))]
     form = PostForm()
     form.category.choices = [(i.id, i.name) for i in Initiative.query.order_by('name')]
     if current_user.can(Permission.WRITE_ARTICLES) and \
             form.validate_on_submit():
         if form.photo.data.filename != '':
             filename = secure_filename(form.photo.data.filename)
-            form.photo.data.save('app/static/uploads/'+filename)
+            form.photo.data.save('app/static/galleria/img/'+Initiative.query.filter_by(id=form.category.data).first().name+'/'+filename)
             form.body.data += '<p>\
-                    <a href="http://localhost:5000/static/uploads/'+\
+                    <a href="http://localhost:5000/static/galleria/img/'+Initiative.query.filter_by(id=form.category.data).first().name+'/'+\
                     filename+'">\
-                    <img alt="" src="http://localhost:5000/static/uploads/'+\
+                    <img alt="" src="http://localhost:5000/static/galleria/img/'+Initiative.query.filter_by(id=form.category.data).first().name+'/'+\
                     filename+'" style="height:141px; width:200px" /></a></p>'
                     
         post = Post(body=form.body.data,
@@ -38,7 +37,7 @@ def index():
     posts = pagination.items
     filename = None
     return render_template('index.html', form=form, posts=posts,
-                           pagination=pagination, photofiles=photofiles)
+                           pagination=pagination)
 
 @main.route('/user/<username>')
 def user(username):
@@ -138,11 +137,13 @@ def delete(id):
 @main.route('/work/<area>')
 @login_required
 def initiative(area):
+    photofiles = [f for f in listdir('app/static/galleria/img/'+area+'/')]
+    photofiles.sort()
     page = request.args.get('page', 1, type=int)
     pagination = Post.query.filter_by(category=area).order_by(Post.timestamp.desc()).paginate(
         page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
         error_out=False)
     posts = pagination.items
     return render_template('initiative.html', user=current_user, posts=posts,
-                           pagination=pagination, area=area)
+                           pagination=pagination, area=area, photofiles=photofiles)
 

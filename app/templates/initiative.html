@@ -4,6 +4,21 @@
 {% block title %}SAF Vellangallur - {{ area }}{% endblock %}
 
 {% block page_content %}
+<h3>Gallery</h3>
+    <div class="galleria">
+      {% for image in photofiles %}
+      <img src="{{ url_for('static',filename='galleria/img/%s/%s'%(area,image))
+      }}">
+      {% endfor %}
+    </div>
+    <script>
+      Galleria.loadTheme('{{
+      url_for('static',filename='galleria/themes/classic/galleria.classic.min.js')
+      }}');
+      Galleria.run('.galleria');
+    </script>  
+
+
 <h3>Posts under {{ area }}</h3>
 {% include '_posts.html' %}
 {% if pagination %}
