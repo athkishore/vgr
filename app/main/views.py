@@ -7,9 +7,12 @@ from .. import db
 from ..models import Permission, Role, User, Post, Initiative
 from ..decorators import admin_required
 from werkzeug import secure_filename
+from os import listdir
+from os.path import isfile, join
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
+    photofiles = [f for f in listdir('app/static/galleria/img') if isfile(join('app/static/galleria/img',f))]
     form = PostForm()
     form.category.choices = [(i.id, i.name) for i in Initiative.query.order_by('name')]
     if current_user.can(Permission.WRITE_ARTICLES) and \
@@ -35,7 +38,7 @@ def index():
     posts = pagination.items
     filename = None
     return render_template('index.html', form=form, posts=posts,
-                           pagination=pagination)
+                           pagination=pagination, photofiles=photofiles)
 
 @main.route('/user/<username>')
 def user(username):

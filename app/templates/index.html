@@ -60,6 +60,19 @@
         <input class="btn btn-default" id="submit" name="submit"
         value="Submit">
 -->
+
+    <div class="galleria">
+      {% for image in photofiles %}
+      <img src="{{ url_for('static',filename='galleria/img/%s'%(image)) }}">
+      {% endfor %}
+    </div>
+    <script>
+      Galleria.loadTheme('{{
+      url_for('static',filename='galleria/themes/classic/galleria.classic.min.js')
+      }}');
+      Galleria.run('.galleria');
+    </script>  
+      
     {% endif %}
 </div>
 {% if current_user.is_authenticated %}
