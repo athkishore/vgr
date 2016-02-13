@@ -6,16 +6,23 @@ from .forms import EditProfileForm, EditProfileAdminForm, PostForm
 from .. import db
 from ..models import Permission, Role, User, Post, Initiative
 from ..decorators import admin_required
-
+from werkzeug import secure_filename
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
     form = PostForm()
     form.category.choices = [(i.id, i.name) for i in Initiative.query.order_by('name')]
-    if request.method == 'POST':
-        print form.validate_on_submit()
     if current_user.can(Permission.WRITE_ARTICLES) and \
             form.validate_on_submit():
+        if form.photo.data.filename != '':
+            filename = secure_filename(form.photo.data.filename)
+            form.photo.data.save('app/static/uploads/'+filename)
+            form.body.data += '<p>\
+                    <a href="http://localhost:5000/static/uploads/'+\
+                    filename+'">\
+                    <img alt="" src="http://localhost:5000/static/uploads/'+\
+                    filename+'" style="height:141px; width:200px" /></a></p>'
+                    
         post = Post(body=form.body.data,
                     author=current_user._get_current_object(),
                     category=Initiative.query.filter_by(id=form.category.data).first().name, category_id=form.category.data)
@@ -26,9 +33,9 @@ def index():
         page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
         error_out=False)
     posts = pagination.items
+    filename = None
     return render_template('index.html', form=form, posts=posts,
                            pagination=pagination)
-
 
 @main.route('/user/<username>')
 def user(username):
@@ -135,3 +142,4 @@ def initiative(area):
     posts = pagination.items
     return render_template('initiative.html', user=current_user, posts=posts,
                            pagination=pagination, area=area)
+

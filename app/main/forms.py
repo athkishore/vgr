@@ -1,6 +1,6 @@
 from flask.ext.wtf import Form
 from wtforms import StringField, TextAreaField, BooleanField, SelectField,\
-    SubmitField
+    SubmitField, FileField
 from wtforms.validators import Required, Length, Email, Regexp
 from wtforms import ValidationError
 from flask.ext.pagedown.fields import PageDownField
@@ -57,6 +57,7 @@ class PostForm(Form):
     body = TextAreaField("Post your update", validators=[Required()])
     #category = StringField("Category", validators=[Required()])
     category = SelectField("Category", coerce=int)
+    photo = FileField('Photo')
     submit = SubmitField('Submit')
 
 class CKTextAreaWidget(TextArea):

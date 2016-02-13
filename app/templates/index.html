@@ -12,7 +12,8 @@
 </div>
 <div>
     {% if current_user.can(Permission.WRITE_ARTICLES) %}
-    <form method="post" class="form" role="form">
+    <form method="post" class="form" role="form"
+    enctype="multipart/form-data">
         {{ form.hidden_tag() }}
 <!--
 	{{ form.body }}
@@ -33,6 +34,14 @@
 	<script>
 	    CKEDITOR.replace('body');
 	</script>
+	<div class="form-group"><label class="control-label"
+	for="photo">Upload photo</label>
+	<p>
+	<span class="btn btn-default btn-file">
+	<input id="photo" name="photo" type=file>
+	</span>
+	</p>
+	</div>
 	<input class="btn btn-default" id="submit" name="submit" type="submit" value="Submit">
 <!--
         <div class="form-group"><label class="control-label" for="body">Post
@@ -51,7 +60,6 @@
         <input class="btn btn-default" id="submit" name="submit"
         value="Submit">
 -->
-    </form>
     {% endif %}
 </div>
 {% if current_user.is_authenticated %}

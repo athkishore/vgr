@@ -14,7 +14,9 @@ class Config:
     FLASKY_MAIL_SENDER = 'SAF Vellangallur <kishore.saf@gmail.com>'
     FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
     FLASKY_POSTS_PER_PAGE = 20
-
+    UPLOAD_FOLDER = '/home/kishore/Documents/python-flask/vgr/app/uploads'
+    ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+    
     @staticmethod
     def init_app(app):
         pass
