@@ -2,7 +2,7 @@ from flask import render_template, redirect, url_for, abort, flash, request,\
     current_app
 from flask.ext.login import login_required, current_user
 from . import main
-from .forms import EditProfileForm, EditProfileAdminForm, PostForm
+from .forms import EditProfileForm, EditProfileAdminForm, PostForm, EditPostForm
 from .. import db
 from ..models import Permission, Role, User, Post, Initiative
 from ..decorators import admin_required
@@ -19,13 +19,13 @@ def index():
             form.validate_on_submit():
         if form.photo.data.filename != '':
             filename = secure_filename(form.photo.data.filename)
-            form.photo.data.save('app/static/galleria/img/'+Initiative.query.filter_by(id=form.category.data).first().name+'/'+filename)
+            filepath = 'app/static/galleria/img/'+Initiative.query.filter_by(id=form.category.data).first().name+'/'
+            fileurl = filepath[4:len(filepath)]
+            form.photo.data.save(filepath+filename)
             form.body.data += '<p>\
-                    <a href="http://localhost:5000/static/galleria/img/'+Initiative.query.filter_by(id=form.category.data).first().name+'/'+\
-                    filename+'">\
-                    <img alt="" src="http://localhost:5000/static/galleria/img/'+Initiative.query.filter_by(id=form.category.data).first().name+'/'+\
-                    filename+'" style="height:141px; width:200px" /></a></p>'
-            attach+= 'app/static/galleria/img/'+Initiative.query.filter_by(id=form.category.data).first().name+'/'+filename+','        
+                    <a href="http://localhost:5000/'+fileurl+filename+'">\
+                    <img alt="" src="http://localhost:5000/'+fileurl+filename+'" style="height:141px; width:200px" /></a></p>'
+            attach+= filepath+filename+','        
         post = Post(body=form.body.data,
                     author=current_user._get_current_object(),
                     category=Initiative.query.filter_by(id=form.category.data).first().name, category_id=form.category.data, attachurls=attach)
@@ -109,18 +109,25 @@ def edit(id):
     if current_user != post.author and \
             not current_user.can(Permission.ADMINISTER):
         abort(403)
-    form = PostForm()
+    form = EditPostForm()
     form.category.choices = [(i.id, i.name) for i in Initiative.query.order_by('name')]
+    attached = post.attachurls.split(',')
+    attached = attached[0:len(attached)-1]
+    form.attached.choices = [(attached.index(i), i) for i in attached]
+    form.attached.default = [attached.index(i) for i in attached]
     if form.validate_on_submit():
         post.body = form.body.data
         post.category_id = form.category.data
         post.category = Initiative.query.get(form.category.data).name
         db.session.add(post)
         flash('The post has been updated.')
+        print form.attached.data
+        for i in range(len(attached)):
+            if i not in form.attached.data:
+                print 'attachment '+str(i)+' has been removed'
         return redirect(url_for('.post', id=post.id))
     form.body.data = post.body
     form.category.data = post.category_id
-    print post.category
     return render_template('edit_post.html', form=form)
 
 @login_required

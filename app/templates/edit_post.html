@@ -29,7 +29,16 @@
 	<script>
 	    CKEDITOR.replace('body');
 	</script>
-
+	<div class="form-group"><label class="control-label"
+	for="attached">Attachments</label>
+	
+	  {% for i in form.attached.choices %}
+	  <p><input id="attached-{{ i[0] }}" name="attached"
+	  type="checkbox" value="0" checked><label for="attached-0">{{ i[1]
+	  }}</label></p>
+	  {% endfor %}
+	
+	</div>
 	<input class="btn btn-default" id="submit" name="submit" type="submit" value="Submit">
     </form>
 
