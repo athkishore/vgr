@@ -7,13 +7,14 @@ from .. import db
 from ..models import Permission, Role, User, Post, Initiative
 from ..decorators import admin_required
 from werkzeug import secure_filename
-from os import listdir
+from os import listdir, system
 from os.path import isfile, join
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
     form = PostForm()
     form.category.choices = [(i.id, i.name) for i in Initiative.query.order_by('name')]
+    attach = ''
     if current_user.can(Permission.WRITE_ARTICLES) and \
             form.validate_on_submit():
         if form.photo.data.filename != '':
@@ -24,10 +25,10 @@ def index():
                     filename+'">\
                     <img alt="" src="http://localhost:5000/static/galleria/img/'+Initiative.query.filter_by(id=form.category.data).first().name+'/'+\
                     filename+'" style="height:141px; width:200px" /></a></p>'
-                    
+            attach+= 'app/static/galleria/img/'+Initiative.query.filter_by(id=form.category.data).first().name+'/'+filename+','        
         post = Post(body=form.body.data,
                     author=current_user._get_current_object(),
-                    category=Initiative.query.filter_by(id=form.category.data).first().name, category_id=form.category.data)
+                    category=Initiative.query.filter_by(id=form.category.data).first().name, category_id=form.category.data, attachurls=attach)
         db.session.add(post)
         return redirect(url_for('.index'))
     page = request.args.get('page', 1, type=int)
@@ -129,6 +130,8 @@ def delete(id):
     if current_user != post.author and \
             not current_user.can(Permission.ADMINISTER):
         abort(403)
+    command = 'rm '+str(post.attachurls).split(',')[0]
+    result = system(command)
     db.session.delete(post)
     flash('The post has been deleted.')
     return redirect(url_for('.index'))
