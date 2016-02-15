@@ -1,6 +1,6 @@
 from flask.ext.wtf import Form
 from wtforms import StringField, TextAreaField, BooleanField, SelectField,\
-    SubmitField
+    SubmitField, FileField, SelectMultipleField, widgets
 from wtforms.validators import Required, Length, Email, Regexp
 from wtforms import ValidationError
 from flask.ext.pagedown.fields import PageDownField
@@ -57,6 +57,18 @@ class PostForm(Form):
     body = TextAreaField("Post your update", validators=[Required()])
     #category = StringField("Category", validators=[Required()])
     category = SelectField("Category", coerce=int)
+    photo = FileField('Photo')
+    submit = SubmitField('Submit')
+
+class MultiCheckboxField(SelectMultipleField):
+    widget = widgets.ListWidget(prefix_label=False)
+    option_widget = widgets.CheckboxInput()
+    
+class EditPostForm(Form):
+    body = TextAreaField("Edit your update", validators=[Required()])
+    category = SelectField("Category", coerce=int)
+    attached = MultiCheckboxField("Attachments", coerce=int)
+    photo = FileField('Photo')
     submit = SubmitField('Submit')
 
 class CKTextAreaWidget(TextArea):

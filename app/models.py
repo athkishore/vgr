@@ -215,6 +215,7 @@ class Post(db.Model):
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     category = db.Column(db.String(24))
     category_id = db.Column(db.Integer, db.ForeignKey('initiatives.id'))
+    attachurls = db.Column(db.Text)
     
     @staticmethod
     def generate_fake(count=100):
