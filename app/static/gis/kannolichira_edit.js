@@ -9,6 +9,9 @@ var labels = ["Id", "Survey No.", "Subdivision No.", "Rent Roll No.", "Owner",
     "Databank Survey No.", "Databank Rent Roll", "Databank Owner", "Databank Status",
     "Farming", "Lease", "Lessee", "Last Cultivated", "No Consent", "Threat", "Organic",
     "Heirloom seeds", "Fallow Block"];
+    
+var labelvars = ["Id", "SurveyNo", "SubDivNo", "RentRoll", "Owner", "DBSvNo", "DBRentRoll", "DBOwner", "DBStatus", "Farming", "Lease", "Lessee", "LastCult", "DenyConsent", "Threat", "Organic", "Heirloom", "FallowBlock"];
+
 function load(plots) {
 	map = new OpenLayers.Map('map', {projection: new
 	OpenLayers.Projection("EPSG:900913"), numZoomLevels: 28});
@@ -63,6 +66,12 @@ function showInfo(evt) {
               <th>'+plots_gbl[ind][0]+'</th>\
               </tr>\
               </table><p></p>';
+          
+          for (var i=0; i<labelvars.length; i++){ 
+              console.log(plots_gbl[ind][i]);
+              document.getElementById(labelvars[i]).value = plots_gbl[ind][i];
+          }
+          /*                
           document.getElementById('Id').value = plots_gbl[ind][0];
           document.getElementById('SurveyNo').value = plots_gbl[ind][1];
           document.getElementById('SubDivNo').value = plots_gbl[ind][2];
@@ -71,6 +80,18 @@ function showInfo(evt) {
           document.getElementById('DBSvNo').value = plots_gbl[ind][5];
           document.getElementById('DBRentRoll').value = plots_gbl[ind][6];
           document.getElementById('DBOwner').value = plots_gbl[ind][7];
+          document.getElementById('DBStatus').value = plots_gbl[ind][8];
+          document.getElementById('Farming').value = plots_gbl[ind][9];
+          document.getElementById('Lease').value = plots_gbl[ind][10];
+          document.getElementById('Lessee').value = plots_gbl[ind][11];
+          document.getElementById('LastCult').value = plots_gbl[ind][12];
+          document.getElementById('DenyConsent').value = plots_gbl[ind][13];
+          document.getElementById('Threat').value = plots_gbl[ind][14];
+          document.getElementById('Organic').value = plots_gbl[ind][15];
+          document.getElementById('Heirloom').value = plots_gbl[ind][16];
+          document.getElementById('FallowBlock').value = plots_gbl[ind][17];
+*/ 
+             
         }
 }
 

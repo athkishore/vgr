@@ -36,6 +36,7 @@ def kannolichira():
   for i in range(243):
     s = f.readline()
     t = s.split(',')
+    print t[17][0]
     d = {'Id':int(t[0]),\
         'SurveyNo': t[1],
         'SubDivNo': t[2],
@@ -45,15 +46,15 @@ def kannolichira():
         'DBRentRoll': t[6],
         'DBOwner': t[7],
         'DBStatus': t[8],
-        'Farming': t[9],
-        'Lease': t[10],
+        'Farming': int(t[9]),
+        'Lease': int(t[10]),
         'Lessee': t[11],
         'LastCult': t[12],
-        'NoConsent': t[13],
-        'Threat': t[14],
-        'Organic': t[15],
+        'NoConsent': int(t[13]),
+        'Threat': int(t[14]),
+        'Organic': int(t[15]),
         'Heirloom': t[16],
-        'FallowBlock': t[17][0:len(t[17])-1]}        
+        'FallowBlock': int(t[17][0:len(t[17])-1])}        
     attr.append(json.dumps(t))
   f.close()
   return render_template('gis/kannolichira.html', attr=attr)  
@@ -69,6 +70,7 @@ def kannolichira_edit():
     s = f.readline()
     lines.append(s)
     t = s.split(',')
+    print t[17][0]
     d = {'Id':int(t[0]),\
         'SurveyNo': t[1],
         'SubDivNo': t[2],
@@ -78,15 +80,16 @@ def kannolichira_edit():
         'DBRentRoll': t[6],
         'DBOwner': t[7],
         'DBStatus': t[8],
-        'Farming': t[9],
-        'Lease': t[10],
+        'Farming': int(t[9]),
+        'Lease': int(t[10]),
         'Lessee': t[11],
         'LastCult': t[12],
-        'NoConsent': t[13],
-        'Threat': t[14],
-        'Organic': t[15],
+        'NoConsent': int(t[13]),
+        'Threat': int(t[14]),
+        'Organic': int(t[15]),
         'Heirloom': t[16],
-        'FallowBlock': t[17][0:len(t[17])-1]}        
+        #'FallowBlock': int(t[17][0:len(t[17])-1])}        
+        'FallowBlock': int(t[17][0])}
     attr.append(json.dumps(t))
   f.close()
   form = PaddyPlotForm()
@@ -99,11 +102,21 @@ def kannolichira_edit():
     DBSvNo = form.DBSvNo.data
     DBRentRoll = form.DBRentRoll.data
     DBOwner = form.DBOwner.data
+    DBStatus = form.DBStatus.data
+    Farming = form.Farming.data
+    Lease = form.Lease.data
+    Lessee = form.Lessee.data
+    LastCult = form.LastCult.data
+    DenyConsent = form.DenyConsent.data
+    Threat = form.Threat.data
+    Organic = form.Organic.data
+    Heirloom = form.Heirloom.data
+    FallowBlock = form.FallowBlock.data
     f = open('plots.csv','w')
-    f.write('Id,SurveyNo,SubDivNo,RentRoll,Owner,DBSvNo,DBRentRoll,DBOwner,DBStatus,Farming,Lease,Lessee,LastCult,NoConsent,Threat,Organic,Heirloom,FallowBlock\n')
+    f.write('Id,SurveyNo,SubDivNo,RentRoll,Owner,DBSvNo,DBRentRoll,DBOwner,DBStatus,Farming,Lease,Lessee,LastCult,DenyConsent,Threat,Organic,Heirloom,FallowBlock\n')
     for i in range(int(Id)-1):
       f.write(lines[i])
-    f.write(Id+','+SurveyNo+','+SubDivNo+','+RentRoll+','+Owner+','+DBSvNo+','+DBRentRoll+','+DBOwner+',,,,,,,,,,\n')
+    f.write(Id+','+SurveyNo+','+SubDivNo+','+RentRoll+','+Owner+','+DBSvNo+','+DBRentRoll+','+DBOwner+','+DBStatus+','+str(Farming)+','+str(Lease)+','+Lessee+','+LastCult+','+str(DenyConsent)+','+str(Threat)+','+str(Organic)+','+Heirloom+','+str(FallowBlock)+'\n')
     for i in range(int(Id),243):
       f.write(lines[i])
     f.close()

@@ -1,5 +1,5 @@
 from flask.ext.wtf import Form
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, HiddenField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, HiddenField, SelectField
 from wtforms.validators import Required, Length, Email, Regexp, EqualTo
 from wtforms import ValidationError
 from ..models import User
@@ -13,7 +13,16 @@ class PaddyPlotForm(Form):
   DBSvNo = StringField("Databank Survey No.")
   DBRentRoll = StringField("Databank Rent Roll No.")
   DBOwner = StringField("Databank Owner")
-  #DBStatus = RadioField("Databank Status", choices=['Paddy', 'Converted'])  
+  DBStatus = SelectField("Databank Status", choices=[('P','Paddy'), ('C','Converted')])  
+  Farming = SelectField("Farming", choices=[(1,'Yes'), (2,'No')], default=2, coerce=int)
+  Lease = SelectField('Lease', choices=[(1,'Yes'), (2,'No')], default=2, coerce=int)
+  Lessee = StringField("Lessee")
+  LastCult = StringField("Last Cultivated")
+  DenyConsent = SelectField("Deny Consent", choices=[(1,'Yes'), (2,'No')], default=2, coerce=int)
+  Threat = SelectField("Threat", choices=[(1,'Yes'), (2,'No')], default=2, coerce=int)
+  Organic = SelectField("Organic", choices=[(1,'Yes'), (2,'No')], default=2, coerce=int)
+  Heirloom = StringField("Heirloom seeds")
+  FallowBlock = SelectField("Fallow block", choices=[(1,'Yes'), (2,'No')], default=2, coerce=int)
   submit = SubmitField("Submit")
 
 '''

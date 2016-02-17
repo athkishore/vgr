@@ -35,9 +35,11 @@
 		var t = {{ plot|tojson }};
 		plots.push(JSON.parse(t));
         {% endfor %}
+        /*
         for (var i=0; i<10; i++){
         	console.log(plots[i]);
         }
+        */
       {% else %}
         console.log("Data not received");
       {% endif %}

@@ -7,7 +7,7 @@ from .. import db
 from ..models import Permission, Role, User, Post, Initiative
 from ..decorators import admin_required
 from werkzeug import secure_filename
-from os import listdir, system
+from os import listdir, system, getcwd
 from os.path import isfile, join
 
 @main.route('/', methods=['GET', 'POST'])
@@ -141,8 +141,8 @@ def edit(id):
                 post.attachurls += attached[i]+','
                 print i
             else:
-                print 'rm '+attached[i]
-                system('rm '+attached[i])
+                print '/bin/rm '+attached[i]
+                system('/bin/rm '+attached[i])
                 print 'attachment '+str(i)+' has been removed'
         '''
         if form.photo.data.filename != '':
@@ -172,9 +172,10 @@ def delete(id):
         abort(403)
     attachments = str(post.attachurls).split(',')
     attachments = attachments[0:len(attachments)-1] #last item is a trailing comma
-    
+
     for f in attachments:
-        command = 'rm '+f
+        command = '/bin/rm '+getcwd()+'/'+f
+        print command
         result = system(command)
     db.session.delete(post)
     flash('The post has been deleted.')
