@@ -12,6 +12,12 @@
 <style>
   .galleria{ width:700px; height:400px; background: #000; }
 </style>
+  <script src="http://dev.openlayers.org/OpenLayers.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='gis/style.css') }}" type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='gis/style1.css') }}" type="text/css">
+  <script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
+
 {% endblock %}
 
 {% block navbar %}
