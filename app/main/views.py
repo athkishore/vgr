@@ -142,7 +142,7 @@ def edit(id):
                 print i
             else:
                 print 'rm '+attached[i]
-                system('rm '+attached[i])
+                system('/bin/rm '+attached[i])
                 print 'attachment '+str(i)+' has been removed'
         '''
         if form.photo.data.filename != '':
@@ -174,7 +174,7 @@ def delete(id):
     attachments = attachments[0:len(attachments)-1] #last item is a trailing comma
     
     for f in attachments:
-        command = 'rm '+f
+        command = '/bin/rm '+f
         result = system(command)
     db.session.delete(post)
     flash('The post has been deleted.')
