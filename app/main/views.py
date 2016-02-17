@@ -141,6 +141,7 @@ def edit(id):
                 post.attachurls += attached[i]+','
                 print i
             else:
+                print 'rm '+attached[i]
                 system('rm '+attached[i])
                 print 'attachment '+str(i)+' has been removed'
         '''

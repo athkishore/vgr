@@ -12,5 +12,5 @@ def inject_permissions():
 
 @main.app_context_processor
 def inject_initiatives():
-    return dict(initiatives=[str(i.name) for i in Initiative.query.order_by('name')])
+    return dict(initiatives=[str(i.name) for i in Initiative.query.order_by('id')])
     
