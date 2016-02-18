@@ -43,3 +43,6 @@ venv
 
 # Editor temp files
 *~
+
+# Environment variables
+*.env
