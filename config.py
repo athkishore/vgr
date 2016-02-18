@@ -9,13 +9,10 @@ class Config:
     MAIL_PORT = 587
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.getenv('MAIL_USERNAME')
-    #MAIL_USERNAME = 'kishore.saf@gmail.com'
     MAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
-    #MAIL_PASSWORD = 'kishore123'
     FLASKY_MAIL_SUBJECT_PREFIX = '[SAF Vellangallur]'
     FLASKY_MAIL_SENDER = 'SAF Vellangallur <kishore.saf@gmail.com>'
     FLASKY_ADMIN = os.getenv('FLASKY_ADMIN')
-    #FLASKY_ADMIN = 'kishore.saf@gmail.com'
     FLASKY_POSTS_PER_PAGE = 20
     UPLOAD_FOLDER = '/home/kishore/Documents/python-flask/vgr/app/uploads'
     ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
