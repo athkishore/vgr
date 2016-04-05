@@ -141,11 +141,6 @@ def edit(id):
                 post.attachurls += attached[i]+','
                 print i
             else:
-<<<<<<< HEAD
-                print 'rm '+attached[i]
-=======
-                print '/bin/rm '+attached[i]
->>>>>>> gis
                 system('/bin/rm '+attached[i])
                 print 'attachment '+str(i)+' has been removed'
         '''
