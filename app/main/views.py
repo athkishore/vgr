@@ -173,12 +173,8 @@ def delete(id):
     attachments = attachments[0:len(attachments)-1] #last item is a trailing comma
 
     for f in attachments:
-<<<<<<< HEAD
-        command = '/bin/rm '+f
-=======
         command = '/bin/rm '+getcwd()+'/'+f
         print command
->>>>>>> gis
         result = system(command)
     db.session.delete(post)
     flash('The post has been deleted.')
