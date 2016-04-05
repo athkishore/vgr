@@ -26,7 +26,7 @@ def index():
                 filepath = 'app/static/galleria/img/'+Initiative.query.filter_by(id=form.category.data).first().name+'/'
                 fileurl = filepath[4:len(filepath)]
                 f.save(filepath+f.filename)
-                form.body.data += '<a href="http://vgr.saf.org/'+fileurl+f.filename+'"><img alt="" src="http://vgr.saf.org/'+fileurl+f.filename+'" style="height:141px; width:200px" /></a>'
+                form.body.data += '<a href="http://vgr.salimalifoundation.org/'+fileurl+f.filename+'"><img alt="" src="http://vgr.saf.org/'+fileurl+f.filename+'" style="height:141px; width:200px" /></a>'
                 attach += filepath+f.filename+','
             form.body.data += '</p>'
             #Old code for single file upload
