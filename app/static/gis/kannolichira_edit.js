@@ -1,4 +1,4 @@
-OpenLayers.ProxyHost = "http://vgr.saf.org/gis/proxy?url=";
+OpenLayers.ProxyHost = "http://vgr.salimalifoundation.org/gis/proxy?url=";
 var map, infoControls;
 var plots_gbl;
 var bounds = new OpenLayers.Bounds(
