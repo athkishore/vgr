@@ -7,7 +7,7 @@ from .. import db
 from ..models import Permission, Role, User, Post, Initiative
 from ..decorators import admin_required
 from werkzeug import secure_filename
-from os import listdir, system
+from os import listdir, system, getcwd
 from os.path import isfile, join
 
 @main.route('/', methods=['GET', 'POST'])
@@ -26,7 +26,7 @@ def index():
                 filepath = 'app/static/galleria/img/'+Initiative.query.filter_by(id=form.category.data).first().name+'/'
                 fileurl = filepath[4:len(filepath)]
                 f.save(filepath+f.filename)
-                form.body.data += '<a href="http://vgr.saf.org/'+fileurl+f.filename+'"><img alt="" src="http://vgr.saf.org/'+fileurl+f.filename+'" style="height:141px; width:200px" /></a>'
+                form.body.data += '<a href="http://vgr.salimalifoundation.org/'+fileurl+f.filename+'"><img alt="" src="http://vgr.saf.org/'+fileurl+f.filename+'" style="height:141px; width:200px" /></a>'
                 attach += filepath+f.filename+','
             form.body.data += '</p>'
             #Old code for single file upload
@@ -141,7 +141,11 @@ def edit(id):
                 post.attachurls += attached[i]+','
                 print i
             else:
+<<<<<<< HEAD
                 print 'rm '+attached[i]
+=======
+                print '/bin/rm '+attached[i]
+>>>>>>> gis
                 system('/bin/rm '+attached[i])
                 print 'attachment '+str(i)+' has been removed'
         '''
@@ -172,9 +176,14 @@ def delete(id):
         abort(403)
     attachments = str(post.attachurls).split(',')
     attachments = attachments[0:len(attachments)-1] #last item is a trailing comma
-    
+
     for f in attachments:
+<<<<<<< HEAD
         command = '/bin/rm '+f
+=======
+        command = '/bin/rm '+getcwd()+'/'+f
+        print command
+>>>>>>> gis
         result = system(command)
     db.session.delete(post)
     flash('The post has been deleted.')

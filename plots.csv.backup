@@ -1,0 +1,244 @@
+Id,SurveyNo,SubDivNo,RentRoll,Owner,DBSvNo,DBRentRoll,DBOwner,DBStatus,Farming,Lease,Lessee,LastCult,DenyConsent,Threat,Organic,Heirloom,FallowBlock
+1,,,,St.Joseph's church,,,,P,2,2,,,2,1,2,,2
+2,,,,St.Joseph's church,,,,P,2,2,,,2,1,2,,2
+3,,,,St.Joseph's church,,,,P,2,2,,,2,2,2,,2
+4,,,,Ambujakshan,,,,P,1,1,Pauli,,2,2,1,Kuruva,2
+5,,,,Ambujakshan,,,,P,1,1,Pauli,,2,2,1,Kuruva,2
+6,,,,Ambujakshan,,,,P,1,1,Pauli,,2,2,1,Kuruva,2
+7,,,,Muthayil Surendran,,,,P,1,2,,,2,2,2,,2
+8,,,,Muthayil Surendran,,,,P,1,2,,,2,2,2,,2
+9,,,,Kaitharath Ouseph,,,,P,1,1,Kaitharath Papachan,,2,2,2,,2
+10,,,,Kaitharath Ouseph,,,,P,1,1,Kaitharath Papachan,,2,2,2,,2
+11,,,,Arakaparambil Sherief,,,,P,1,2,,,2,2,2,,2
+12,,,,Arakaparambil Sherief,,,,P,1,2,,,2,2,2,,2
+13,,,,Arakaparambil Sherief,,,,P,1,2,,,2,2,2,,2
+14,,,,Arakaparambil Sherief,,,,P,1,2,,,2,2,2,,2
+15,,,,Arakaparambil Sherief,,,,P,1,2,,,2,2,2,,2
+16,,,,Somasundaran,,,,P,2,2,,,2,1,2,,2
+17,,,,Sachi timber,,,,P,2,2,,,2,1,2,,2
+18,,,,Nakkara Suresh,,,,P,1,2,,,2,2,2,,2
+19,,,,?,,,,P,1,2,,,2,2,2,,2
+20,,,,Arakaparambil motor shed 1cent,,,,P,2,2,,,2,2,2,,2
+21,,,,Arakaparambil,,,,P,1,2,,,2,2,2,,2
+22,,,,Arakaparambil,,,,P,1,2,,,2,2,2,,2
+23,,,,Arakaparambil,,,,P,1,2,,,2,2,2,,2
+24,,,,Vidyadharan,,,,C,2,2,,,2,1,2,,2
+25,,,,Arakaparambil,,,,P,1,2,,,2,2,2,,2
+26,,,,Arakaparambil,,,,P,1,2,,,2,2,2,,2
+27,,,,Kolankanni Yakob daughters,,,,P,2,2,,,1,1,2,,1
+28,,,,Dayanandan,,,,P,1,2,,,2,2,1,,2
+29,,,,Dayanandan,,,,P,1,2,,,2,2,1,,2
+30,,,,Dayanandan,,,,P,1,2,,,2,2,1,,2
+31,,,,Dayanandan,,,,P,1,2,,,2,2,1,,2
+32,,,,Udayanandan,,,,P,1,1,Dayanandan,,2,2,1,,2
+33,,,,Umesh,,,,P,1,1,Dayanandan,,2,2,1,,2
+34,,,,Udayanandan,,,,P,1,1,Dayanandan,,2,2,1,,2
+35,,,,Arakaparambil,,,,P,1,2,,,2,2,2,,2
+36,,,,Nakkara Subramanian,,,,P,1,2,,,2,2,2,,2
+37,,,,Nakkara Subramanian,,,,P,1,2,,,2,2,2,,2
+38,,,,Nakkara Subramanian,,,,P,1,2,,,2,2,2,,2
+39,,,,Abhimanyu Ramani,,,,P,2,2,,,2,1,2,,2
+40,,,,Omana,,,,P,2,2,,,2,1,2,,2
+41,,,,Omana,,,,C,2,2,,,2,1,2,,2
+42,,,,Ashari sons,,,,C,2,2,,,2,1,2,,2
+43,,,,Maliyekal Jonny,,,,P,1,1,Papachan,,2,2,2,,2
+44,,,,Ashari,,,,P,2,2,,,2,1,2,,2
+45,,,,Aashari Kompiruparambil Bhaskaran,,,,P,2,2,,,2,1,2,,2
+46,,,,?,,,,P,2,2,,,2,2,2,,2
+47,,,,Padaparambil Surendran,,,,P,1,2,,,2,2,2,,2
+48,,,,Padaparambil Surendran,,,,P,1,2,,,2,2,2,,2
+49,,,,Padaparambil Prakashan,,,,P,1,2,,,2,2,2,,2
+50,,,,Padaparambil Prakashan,,,,P,1,2,,,2,2,2,,2
+51,,,,Padaparambil Prakashan,,,,P,1,2,,,2,2,2,,2
+52,,,,Parekkadan Kuttappan Bindu,,,,P,2,2,,,2,2,2,,2
+53,,,,Changampuzha Dharmajan,,,,P,1,2,,,2,2,2,,2
+54,,,,Police Ambujan,,,,P,1,2,,,2,2,2,,2
+55,,,,Papachan,,,,P,1,2,,,2,2,2,,2
+56,,,,Police Ambujan,,,,P,1,1,Papachan,,2,2,2,,2
+57,,,,Police Ambujan,,,,P,1,1,Papachan,,2,2,2,,2
+58,,,,Police Ambujan,,,,P,1,1,Papachan,,2,2,2,,2
+59,,,,Muthirithiparambil Ambujan vaka,,,,P,1,2,,,2,2,2,,2
+60,,,,Muthirithiparambil Ambujan vaka,,,,P,1,2,,,2,2,2,,2
+61,,,,Papachan,,,,P,1,2,,,2,2,2,,2
+62,,,,unknown,,,,P,2,2,,,2,2,2,,2
+63,,,,Arakaparambil,,,,P,1,2,,,2,2,2,,2
+64,,,,unknown,,,,P,2,2,,,2,2,2,,2
+65,,,,unknown,,,,P,2,2,,,2,2,2,,2
+66,,,,Pauli,,,,P,1,2,,,2,2,1,Kuruva,2
+67,,,,Pauli,,,,P,1,2,,,2,2,1,Kuruva,2
+68,,,,Somasundaran,,,,P,2,2,,,2,1,2,,2
+69,,,,Pauli,,,,P,1,2,,,2,2,1,Kuruva,2
+70,,,,Pauli New,,,,P,1,2,,,2,2,1,Kuruva,2
+71,,,,Somasundaran,,,,P,2,2,,,1,1,2,,2
+72,,,,Somasundaran,,,,P,2,2,,,1,1,2,,2
+73,,,,Somasundaran,,,,P,2,2,,,1,1,2,,2
+74,,,,Kolankanni Kunjuvareeth,,,,P,2,2,,,1,1,2,,2
+75,,,,Somasundaran,,,,P,2,2,,,1,1,2,,2
+76,,,,Kolankanni Jose,,,,P,2,2,,,2,2,2,,2
+77,,,,Kannur Raghu,,,,P,1,1,Krishnettan,,2,2,2,,2
+78,,,,Kannur Raghu,,,,P,2,2,,,2,2,2,,2
+79,,,,Kannur Raghu,,,,P,2,2,,,2,2,2,,2
+80,,,,Kannur Raghu,,,,P,1,1,Krishnettan,,2,2,2,,2
+81,,,,Mathachan,,,,P,1,2,,,2,2,1,Chitteni,2
+82,,,,Mathachan,,,,P,1,2,,,2,2,1,Chitteni,2
+83,,,,Mathachan,,,,P,1,2,,,2,2,1,Chitteni,2
+84,,,,Mathachan,,,,P,1,2,,,2,2,1,Chitteni,2
+85,,,,Kolankanni Kunjuvareeth,,,,P,1,1,Krishnettan,,2,2,2,,2
+86,,,,Mathachan,,,,P,1,2,,,2,2,1,Chitteni,2
+87,,,,Kolankanni Thomas,,,,P,1,1,Pauli,,2,2,1,Kuruva,2
+88,,,,Kolankanni Thomas,,,,P,1,1,Pauli,,2,2,1,Kuruva,2
+89,,,,Pauli New,,,,P,1,2,,,2,2,1,Kuruva,2
+90,,,,Pauli,,,,P,1,2,,,2,2,1,Kuruva,2
+91,,,,Papachan,,,,P,1,2,,,2,2,2,,2
+92,,,,Papachan,,,,P,1,2,,,2,2,2,,2
+93,,,,Papachan,,,,P,1,2,,,2,2,2,,2
+94,,,,Papachan,,,,P,1,2,,,2,2,2,,2
+95,,,,Rappai vaka,,,,P,1,1,Papachan,,2,2,2,,2
+96,,,,Krishnettan,,,,P,1,2,,,2,2,2,,2
+97,,,,Padathuparambil Moitheen,,,,P,2,2,,,2,1,2,,2
+98,,,,Chazhur Mercy,,,,P,2,2,,,2,1,2,,2
+99,,,,Kannur Balakrishnan,,,,P,2,2,,,2,1,2,,2
+100,,,,Kannur Balakrishnan,,,,P,2,2,,,2,1,2,,2
+101,,,,Chazhur Mercy,,,,P,2,2,,,2,1,2,,2
+102,,,,Chazhur Mercy son Jyoti,,,,P,2,2,,,2,1,2,,2
+103,,,,Krishnettan,,,,P,1,2,,,2,2,2,,2
+104,,,,Rappai vaka,,,,P,1,1,Papachan,,2,2,2,,2
+105,,,,Papachan,,,,P,1,2,,,2,2,2,,2
+106,,,,Papachan,,,,P,1,2,,,2,2,2,,2
+107,,,,Papachan,,,,P,2,2,,,2,1,2,,2
+108,,,,Police Sankarankutty,,,,P,1,2,,,2,2,2,,2
+109,,,,Nakkara Subran,,,,P,1,2,,,2,2,2,,2
+110,,,,Papachan,,,,P,1,2,,,2,2,2,,2
+111,,,,Nakkara Subran,,,,P,1,2,,,2,2,2,,2
+112,,,,Police Sankarankutty,,,,P,1,2,,,2,2,2,,2
+113,,,,?,,,,P,1,1,Papachan,,2,2,2,,2
+114,,,,Chilangara Jose,,,,P,1,1,Krishnettan,,2,2,2,,2
+115,,,,Chilangara Jose,,,,P,1,1,Krishnettan,,2,2,2,,2
+116,,,,Chilangara Jose,,,,P,1,1,Krishnettan,,2,2,2,,2
+117,,,,Chilangara Jose,,,,P,1,1,Krishnettan,,2,2,2,,2
+118,,,,?,,,,P,1,1,Papachan,,2,2,2,,2
+119,,,,Papachan,,,,P,1,2,,,2,2,2,,2
+120,,,,Pitambaran,,,,P,2,2,,,2,2,2,,2
+121,,,,Maliyekal Jonny,,,,P,2,2,,,2,2,2,,2
+122,,,,Chilangara Jose,,,,P,1,1,Krishnettan,,2,2,2,,2
+123,,,,Chilangara Jose,,,,P,1,1,Krishnettan,,2,2,2,,2
+124,,,,Palakkadan Madhavan Bros,,,,P,1,1,Krishnettan,,2,2,2,,2
+125,,,,Palakkadan Madhavan Bros,,,,P,1,1,Krishnettan,,2,2,2,,2
+126,,,,Palakkadan Balakrishnan,,,,P,2,2,,,2,2,2,,2
+127,,,,?,,,,P,2,2,,,2,2,2,,2
+128,,,,Somasundaran,,,,P,2,2,,,2,1,2,,2
+129,,,,Manjali Roy,,,,P,1,1,Papachan,,2,2,2,,2
+130,,,,?,,,,P,2,2,,,2,2,2,,2
+131,,,,Manjali Roy,,,,P,1,1,Papachan,,2,2,2,,2
+132,,,,Antony Mash,,,,P,2,2,,,2,2,2,,2
+133,,,,Govindankutty menon,,,,P,2,2,,,2,1,2,,2
+134,,,,Sivaraman,,,,P,2,2,,,2,2,2,,2
+135,,,,Kamalakaran,,,,P,2,2,,,2,2,2,,2
+136,,,,Somasundaran,,,,P,2,2,,,2,1,2,,2
+137,,,,Kolankanni,,,,P,2,2,,,2,2,2,,2
+138,,,,Kolankanni,,,,P,2,2,,,2,2,2,,2
+139,,,,Kolankanni,,,,P,2,2,,,2,2,2,,2
+140,,,,Kolankanni,,,,P,2,2,,,2,2,2,,2
+141,,,,Kolankanni,,,,P,2,2,,,2,2,2,,2
+142,,,,Kolankanni,,,,P,2,2,,,2,2,2,,2
+143,,,,Kolankanni,,,,P,2,2,,,2,2,2,,2
+144,,,,Kolankanni,,,,P,2,2,,,2,2,2,,2
+145,,,,Kolankanni,,,,P,2,2,,,2,2,2,,2
+146,,,,Kolankanni,,,,P,2,2,,,2,2,2,,2
+147,,,,,,,,P,2,2,,,2,2,2,,2
+148,,,,,,,,P,2,2,,,2,2,2,,2
+149,,,,,,,,P,2,2,,,2,2,2,,2
+150,,,,,,,,P,2,2,,,2,2,2,,2
+151,,,,,,,,P,2,2,,,2,2,2,,2
+152,,,,,,,,P,2,2,,,2,2,2,,2
+153,,,,Raghu,,,,P,2,2,,,2,2,2,,2
+154,,,,Govindankutty Mash,,,,P,2,2,,,2,2,2,,2
+155,,,,,,,,P,2,2,,,2,2,2,,2
+156,,,,,,,,P,2,2,,,2,2,2,,2
+157,,,,Papachan,,,,P,1,2,,,2,2,2,,2
+158,,,,Papachan,,,,P,1,2,,,2,2,2,,2
+159,,,,Papachan,,,,P,1,2,,,2,2,2,,2
+160,,,,,,,,P,2,2,,,2,2,2,,2
+161,,,,Papachan,,,,P,1,2,,,2,2,2,,2
+162,,,,Palakkadan Madhavan bros,,,,P,2,2,,,2,2,2,,2
+163,,,,Kachappilly Poulose,,,,P,2,2,,,2,2,2,,2
+164,,,,Chetiyattil,,,,P,1,1,Papachan,,2,2,2,,2
+165,,,,Chetiyattil,,,,P,1,1,Papachan,,2,2,2,,2
+166,,,,Chetiyattil,,,,P,1,1,Papachan,,2,2,2,,2
+167,,,,Chetiyattil,,,,P,1,1,Papachan,,2,2,2,,2
+168,,,,Chetiyattil,,,,P,1,1,Papachan,,2,2,2,,2
+169,,,,Chetiyattil,,,,P,1,1,Papachan,,2,2,2,,2
+170,,,,Chetiyattil,,,,P,1,1,Papachan,,2,2,2,,2
+171,,,,Ravi (Neelakantan Mash),,,,P,2,2,,,2,2,2,,2
+172,,,,Ravi (Neelakantan Mash),,,,P,2,2,,,2,2,2,,2
+173,,,,Ravi (Neelakantan Mash),,,,P,2,2,,,2,2,2,,2
+174,,,,,,,,P,2,2,,,2,2,2,,2
+175,,,,,,,,P,2,2,,,2,2,2,,2
+176,,,,Divakaran,,,,P,2,2,,,2,2,2,,2
+177,,,,,,,,P,2,2,,,2,2,2,,2
+178,,,,,,,,P,2,2,,,2,2,2,,2
+179,,,,,,,,P,2,2,,,2,2,2,,2
+180,,,,PC Suresh,,,,P,2,2,,,2,2,2,,2
+181,,,,PC Suresh,,,,P,2,2,,,2,2,2,,2
+182,,,,Vattekkatt Raghu,,,,P,2,2,,,2,2,2,,2
+183,,,,Kuttan,,,,P,2,2,,,2,2,2,,2
+184,,,,Aravindan,,,,P,2,2,,,2,2,2,,2
+185,,,,,,,,P,2,2,,,2,2,2,,2
+186,,,,,,,,P,2,2,,,2,2,2,,2
+187,,,,,,,,P,2,2,,,2,2,2,,2
+188,,,,,,,,P,2,2,,,2,2,2,,2
+189,,,,,,,,P,2,2,,,2,2,2,,2
+190,,,,,,,,P,2,2,,,2,2,2,,2
+191,,,,,,,,P,2,2,,,2,2,2,,2
+192,,,,,,,,P,2,2,,,2,2,2,,2
+193,,,,,,,,P,2,2,,,2,2,2,,2
+194,,,,,,,,P,2,2,,,2,2,2,,2
+195,,,,Bavas,,,,P,2,2,,,2,2,2,,1
+196,,,,Bavas,,,,P,2,2,,,2,2,2,,1
+197,,,,Unnikrishnan,,,,P,2,2,,,2,2,2,,2
+198,,,,Adv Vincent,,,,P,2,2,,,2,2,2,,2
+199,,,,Paul,,,,P,2,2,,,2,2,2,,2
+200,,,,Varghese Thengil,,,,P,2,2,,,2,2,2,,2
+201,,,,Vattekkatt,,,,P,2,2,,,2,2,2,,2
+202,,,,Sivaraman,,,,P,2,2,,,2,2,2,,2
+203,,,,Divakaran Kaniyan,,,,P,2,2,,,2,2,2,,2
+204,,,,,,,,P,2,2,,,2,2,2,,2
+205,,,,Unnikrishnan,,,,P,2,2,,,2,2,2,,2
+206,,,,Unnikrishnan,,,,P,2,2,,,2,2,2,,2
+207,,,,Unnikrishnan,,,,P,2,2,,,2,2,2,,2
+208,,,,Unnikrishnan,,,,P,2,2,,,2,2,2,,2
+209,,,,Unnikrishnan,,,,P,2,2,,,2,2,2,,2
+210,,,,Nalini,,,,P,2,2,,,2,2,2,,2
+211,,,,Adv Vincent,,,,P,2,2,,,2,2,2,,2
+212,,,,Adv Vincent,,,,P,2,2,,,2,2,2,,2
+213,,,,Adv Vincent,,,,P,2,2,,,2,2,2,,2
+214,,,,Adv Vincent,,,,P,2,2,,,2,2,2,,2
+215,,,,Adv Vincent,,,,P,2,2,,,2,2,2,,2
+216,,,,Paul,,,,P,2,2,,,2,2,2,,2
+217,,,,Paul,,,,P,2,2,,,2,2,2,,2
+218,,,,Paul,,,,P,2,2,,,2,2,2,,2
+219,,,,Paul,,,,P,2,2,,,2,2,2,,2
+220,,,,Paul,,,,P,2,2,,,2,2,2,,2
+221,,,,,,,,P,2,2,,,2,2,2,,2
+222,,,,,,,,P,2,2,,,2,2,2,,2
+223,,,,,,,,P,2,2,,,2,2,2,,2
+224,,,,,,,,P,2,2,,,2,2,2,,2
+225,,,,,,,,P,2,2,,,2,2,2,,2
+226,,,,Kuttapan,,,,P,2,2,,,2,2,2,,2
+227,,,,Varuthutty,,,,P,2,2,,,2,2,2,,2
+228,,,,,,,,P,2,2,,,2,2,2,,2
+229,,,,,,,,P,2,2,,,2,2,2,,2
+230,,,,,,,,P,2,2,,,2,2,2,,2
+231,,,,,,,,P,2,2,,,2,2,2,,2
+232,,,,,,,,P,2,2,,,2,2,2,,2
+233,,,,Mathew,,,,P,2,2,,,2,2,2,,2
+234,,,,,,,,P,2,2,,,2,2,2,,2
+235,,,,,,,,P,2,2,,,2,2,2,,2
+236,,,,,,,,P,2,2,,,2,2,2,,2
+237,,,,Chathappan,,,,P,2,2,,,2,2,2,,2
+238,,,,Kakkulam Rajan,,,,P,2,2,,,2,2,2,,2
+239,,,,CP Jose,,,,P,2,2,,,2,2,2,,2
+240,,,,Papachan,,,,P,1,2,,,2,2,2,,2
+241,,,,EKM?,,,,P,2,2,,,2,2,2,,1
+242,,,,,,,,P,2,2,,,2,2,2,,1
+243,,,,Kamalakaran,,,,P,2,2,,,2,2,2,,2

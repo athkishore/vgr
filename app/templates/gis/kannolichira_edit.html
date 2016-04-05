@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+
+{% block title %}SAF Vellangallur{% endblock %}
+
+{% block page_content %}
+
+  <script src="{{ url_for('static', filename='gis/kannolichira_edit.js') }}"></script>
+
+<div id="gis">
+    <div id="info">
+    	
+    	<h1>Kannolichira Padashekharam - Vellangallur Panchayat</h1>
+        <p>Click on a plot to see details</p>
+        
+        <p>Click on the +/- near the top left corner to zoom in and out.
+        </p>
+
+        <div id="responseText">
+	</div>        
+        {{ wtf.quick_form(form) }}
+
+    	<div id="responseTextUser">
+    	</div>
+    </div>
+      <div id="map" class="smallmap"></div>
+
+    <div id="docs">
+    </div>
+    <script type="text/javascript">
+      {% if attr %}
+        var plots = [];
+        {% for plot in attr %}
+		var t = {{ plot|tojson }};
+		plots.push(JSON.parse(t));
+        {% endfor %}
+        /*
+        for (var i=0; i<10; i++){
+        	console.log(plots[i]);
+        }
+        */
+      {% else %}
+        console.log("Data not received");
+      {% endif %}
+
+      load(plots);
+    </script>
+</div>
+{% endblock %}
